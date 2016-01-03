@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   @token = ''
 
   def registration
+  	logger.info '123'
     @token = params[:token]
     logger.info params[:question]
     question = params[:question]
