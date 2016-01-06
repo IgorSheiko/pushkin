@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     question = params[:question]
 
     puts @token
+    Rails.logger.fatal("Token: #{@token}")
 	render json: {answer: 'answer'}
   end
 
