@@ -1,6 +1,5 @@
 require 'net/http'
 require 'pry'
-require_relative "./tok.rb"
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
