@@ -13,20 +13,19 @@ class ApplicationController < ActionController::Base
     question = params[:question]
     File.write("lib/token.txt",token)
     Rails.logger.fatal("Token: #{token}")
-	render json: {answer: 'снежные'}
+    render json: {answer: 'снежные'}
   end
 
   def quiz
-  	answer = Manage.new(params).level_manage
-  	token = File.read("lib/token.txt")
-  	uri = URI("http://pushkin.rubyroid.by/quiz")
+    answer = Manage.new(params).level_manage
+    token = File.read("lib/token.txt")
+    uri = URI("http://pushkin.rubyroid.by/quiz")
     parameters = {
       answer: answer,
       token: token,
       task_id: params[:id]
     }
-    binding.pry
-    #Net::HTTP.post_form(uri, parameters)
     render nothing: true
+    Net::HTTP.post_form(uri, parameters)
   end
 end
