@@ -17,6 +17,9 @@ Bundler.require(*Rails.groups)
 
 module Pushkin
   class Application < Rails::Application
+  config.log_level = :debug
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::ERROR
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
