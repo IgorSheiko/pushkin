@@ -11,7 +11,7 @@ class Manage
 
   def level_manage
   	Rails.logger.fatal("#{@level}")
-    case @level
+    case @level.to_s
     when '1'
       Rails.logger.fatal('3')
       @first_lvl = FirstLvl.new(@question)
