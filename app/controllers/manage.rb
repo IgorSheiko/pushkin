@@ -1,3 +1,5 @@
+require_relative "./first_lvl.rb"
+require_relative "./second_lvl.rb"
 require 'pry'
 
 class Manage
@@ -11,7 +13,14 @@ class Manage
     case @level
     when '1'
       @first_lvl = FirstLvl.new(@question)
-      @first_lvl.search
+      digit_string = @first_lvl.search
+      @first_lvl.answer(digit_string)
+    when '2'
+      SecondLvl.new.search(@question)
+    when '3','4'
+      ThirdLvl.new(@question).search
+    when '5'
+      FifthLvl.new(@question).search
     end
   end
 end

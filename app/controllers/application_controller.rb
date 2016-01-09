@@ -5,6 +5,8 @@ require_relative "./manage.rb"
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+
+  #TODO const split
   protect_from_forgery with: :exception
   skip_before_filter :verify_authenticity_token
   @@token
@@ -25,6 +27,7 @@ class ApplicationController < ActionController::Base
       token: token,
       task_id: params[:id]
     }
+    #binding.pry
     render nothing: true
     Net::HTTP.post_form(uri, parameters)
   end
