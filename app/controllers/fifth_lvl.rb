@@ -12,7 +12,7 @@ class FifthLvl
   end
 
   def search
-  	input_string = @question.split(/\s|,|\.|\?|!|:|;|\(|\)|-|"/)
+    input_string = @question.split(/\s|,|\.|\?|!|:|;|\(|\)|-|"/)
     digit_string = FirstLvl.new(@question).search
     answer_array = []
     answer_string = ''

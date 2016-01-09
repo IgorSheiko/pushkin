@@ -29,6 +29,7 @@ class ApplicationController < ActionController::Base
     }
     #binding.pry
     render nothing: true
+    Rails.logger.fatal("Parameters: #{parameters}")
     Net::HTTP.post_form(uri, parameters)
   end
 end
