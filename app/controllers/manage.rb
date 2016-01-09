@@ -10,10 +10,10 @@ class Manage
   end
 
   def level_manage
-  	puts '@lvl'
+  	Rails.logger.fatal("#{@level}")
     case @level
     when '1'
-      puts '3'
+      Rails.logger.fatal('3')
       @first_lvl = FirstLvl.new(@question)
       digit_string = @first_lvl.search
       @first_lvl.answer(digit_string)
