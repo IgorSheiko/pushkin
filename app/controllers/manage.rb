@@ -10,8 +10,10 @@ class Manage
   end
 
   def level_manage
+  	puts '@lvl'
     case @level
     when '1'
+      puts '3'
       @first_lvl = FirstLvl.new(@question)
       digit_string = @first_lvl.search
       @first_lvl.answer(digit_string)
