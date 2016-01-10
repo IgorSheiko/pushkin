@@ -27,9 +27,9 @@ class ApplicationController < ActionController::Base
       token: token,
       task_id: params[:id]
     }
-    #binding.pry
+    binding.pry
     render nothing: true
     Rails.logger.fatal("Parameters: #{parameters}")
-    Net::HTTP.post_form(uri, parameters)
+    #Net::HTTP.post_form(uri, parameters)
   end
 end
