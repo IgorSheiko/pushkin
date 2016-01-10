@@ -13,6 +13,7 @@ class SecondLvl
 
   def search question
     words = question.split(/\s|,|\.|\?|!|:|;|\(|\)|-|"/)
+    words.delete('    ')
     digit_string = ''
     words.each do |word|
       unless word == ''
