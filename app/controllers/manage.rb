@@ -10,10 +10,8 @@ class Manage
   end
 
   def level_manage
-  	Rails.logger.fatal("#{@level}")
     case @level.to_s
     when '1'
-      Rails.logger.fatal('3')
       @first_lvl = FirstLvl.new(@question)
       digit_string = @first_lvl.search
       @first_lvl.answer(digit_string)
@@ -23,6 +21,10 @@ class Manage
       ThirdLvl.new(@question).search
     when '5'
       FifthLvl.new(@question).search
+    when '6','7'
+      SixthLvl.new(@question).search
+    when '8'
+      EighthLvl.new(@question).search
     end
   end
 end
