@@ -14,7 +14,6 @@ class FifthLvl
   def search
     input_string = @question.split(/\s|,|\.|\?|!|:|;|\(|\)|-|"/)
     input_string.delete("")
-    binding.pry
     digit_string = FirstLvl.new(@question).search
     answer_array = []
     answer_string = ''
@@ -26,7 +25,6 @@ class FifthLvl
       answer_array << @str_0[test_string + '_']
       digit_array[i] = elem
       answer_string = answer_array[i] + ',' + input_string[i] if answer_array[i]
-      binding.pry
     end
     #binding.pry
     answer_string

@@ -13,7 +13,6 @@ class FirstLvl
   end
 
   def search
-    Rails.logger.fatal('4')
     words = @question.split(/\s|,|\.|\?|!|:|;|\(|\)|-|"/)
     digit_string = ''
     words.each do |word|
@@ -26,7 +25,6 @@ class FirstLvl
   end
 
   def answer digit_string
-    Rails.logger.fatal('2')
     @str_name[digit_string]
   end
 end
