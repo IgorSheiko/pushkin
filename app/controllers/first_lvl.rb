@@ -13,9 +13,10 @@ class FirstLvl
   end
 
   def search
-    words = @question.split(/\s|,|\.|\?|!|:|;|\(|\)|-|"/)
-    words.delete('    ')
+    words = @question.split(/\s|,| |\.|\?|!|:|;|\(|\)|-|"/)
+    words.delete("")
     digit_string = ''
+    #binding.pry
     words.each do |word|
       unless word == ''
         digit = @word_digit[word]

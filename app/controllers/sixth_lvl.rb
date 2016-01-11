@@ -3,7 +3,7 @@ require 'pry'
 
 class SixthLvl
   def initialize question
-    @question = ' ' + question
+    @question = ' ' + question.delete(' ')
     @str_sort = JSON.parse(load_file('str_sort'))
   end
 
@@ -14,6 +14,7 @@ class SixthLvl
   def search
     question_sotr = @question.split("").sort.join
     @str_sort[question_sotr]
+    #binding.pry
   end
 
 end

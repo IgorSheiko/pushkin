@@ -3,7 +3,7 @@ require 'pry'
 
 class EighthLvl
   def initialize question
-    @question = ' ' + question
+    @question = ' ' + question.delete(' ')
     @length_string = JSON.parse(load_file('length_string'))
     @length_array = @length_string[@question.size.to_s]
   end
