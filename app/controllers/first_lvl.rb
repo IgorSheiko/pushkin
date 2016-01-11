@@ -4,8 +4,8 @@ require 'pry'
 class FirstLvl
   def initialize question
     @question = question
-    @word_digit = JSON.parse(load_file('word_digit'))
-    @str_name = JSON.parse(load_file('str_name'))
+    @@word_digit ||= JSON.parse(load_file('word_digit'))
+    @@str_name ||= JSON.parse(load_file('str_name'))
   end
 
   def load_file name
@@ -19,7 +19,7 @@ class FirstLvl
     #binding.pry
     words.each do |word|
       unless word == ''
-        digit = @word_digit[word]
+        digit = @@word_digit[word]
         digit_string = digit_string + digit.to_s + '_'
       end
     end
@@ -27,6 +27,7 @@ class FirstLvl
   end
 
   def answer digit_string
-    @str_name[digit_string]
+  	#binding.pry
+    @@str_name[digit_string]
   end
 end
