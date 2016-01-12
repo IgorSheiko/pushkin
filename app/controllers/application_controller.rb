@@ -14,8 +14,9 @@ class ApplicationController < ActionController::Base
     token = params[:token]
     question = params[:question]
     File.write("lib/token.txt",token)
-    Rails.logger.fatal("Token: #{token}")
-    render json: {answer: 'снежные'}
+    #Rails.logger.fatal("Token: #{token}")
+    answer = SecondLvl.new.search(question)
+    render json: {answer: answer}
   end
 
   def quiz
@@ -29,7 +30,7 @@ class ApplicationController < ActionController::Base
     }
     #binding.pry
     render nothing: true
-    Rails.logger.fatal("Parameters: #{parameters}")
+    #Rails.logger.fatal("Parameters: #{parameters}")
     Net::HTTP.post_form(uri, parameters)
   end
 end

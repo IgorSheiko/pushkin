@@ -14,6 +14,6 @@ class FirstLvl
   def search 
   	#binding.pry
   	words = @question.split(/\s|,| |\.|\?|!|:|;|\(|\)|-|—|"/)
-    @@lvl1[words.join]  
+    @@lvl1[words.join].delete '0-9'  
   end
 end
