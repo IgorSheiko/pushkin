@@ -15,7 +15,11 @@ class ApplicationController < ActionController::Base
     question = params[:question]
     File.write("lib/token.txt",token)
     #Rails.logger.fatal("Token: #{token}")
+    answer = ''
     answer = SecondLvl.new.search(question)
+    unless answer
+    	answer = 'снежные'
+    end
     render json: {answer: answer}
   end
 
