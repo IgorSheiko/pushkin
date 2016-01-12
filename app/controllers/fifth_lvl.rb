@@ -14,7 +14,7 @@ class FifthLvl
   def search
     input_string = @question.split(/\s|,| |\.|\?|!|:|;|\(|\)|-|"/)
     input_string.delete("")
-    digit_string = FirstLvl.new(@question).search
+    digit_string = FifthLvlHelp.new(@question).search
     answer_array = []
     answer_string = ''
     digit_array = digit_string.split('_')

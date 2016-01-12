@@ -13,6 +13,10 @@ class SixthLvl
 
   def search
     question_sotr = @question.split("").sort.join
+    binding.pry
+    unless @@str_sort[question_sotr]
+    	question_sotr = question_sotr + '—'
+    end
     @@str_sort[question_sotr]
     #binding.pry
   end

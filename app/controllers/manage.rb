@@ -12,9 +12,7 @@ class Manage
   def level_manage
     case @level.to_s
     when '1'
-      @first_lvl = FirstLvl.new(@question)
-      digit_string = @first_lvl.search
-      @first_lvl.answer(digit_string)
+      FirstLvl.new(@question).search
     when '2'
       SecondLvl.new.search(@question)
     when '3','4'

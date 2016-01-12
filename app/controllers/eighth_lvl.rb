@@ -15,6 +15,7 @@ class EighthLvl
   def search
     question_sotr = @question.split("").sort
     ans = ''
+    binding.pry
     @length_array.each do |i|
       str = i.split("")
       if (str - question_sotr).size <= 1 
